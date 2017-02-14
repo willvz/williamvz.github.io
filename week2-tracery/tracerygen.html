@@ -1,0 +1,86 @@
+<script src="../lib/tracery.js"></script>
+<script src="../lib/mousetrap.min.js"></script>
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script>
+var grammarObj = {
+      "origin": [
+    "my friend #name# is such a #adj# rooomate because he keeps #verb# the #noun#. I can't stand it, and if he doesnt move out I will #verb2# #blank#."
+  ],
+  "adj": [
+    "mean",
+    "weird",
+    "loud",
+    "annoying",
+    "boring",
+    "awkward",
+    "talkitive",
+    "quiet"
+  ],
+  "name": [
+    "teo",
+    "CJ",
+    "Justin",
+    "Dean",
+    "Nico",
+    "Jackson",
+    "Jack",
+    "Eric"
+  ],
+  "verb": [
+    "eating",
+    "writing on",
+    "jumping on",
+    "stretching",
+    "screaming",
+    "smelling",
+    "playing the trumpet",
+    "gargling on",
+    "gleeking on",
+    "sweating in",
+    "rubbing"
+   ],
+  "verb2": [
+    "eat",
+    "write on",
+    "jump on",
+    "stretch on",
+    "scream at",
+    "smell",
+    "gargle",
+    "gleeking on",
+    "sweating in",
+    "rub"
+  ],
+  "noun": [
+    "coffee",
+    "my shoes",
+    "cups",
+    "TV",
+    "couch",
+    "sink",
+    "pillows",
+    "my socks",
+    "xbox",
+    "closet",
+    "Chair that Teo sits in",
+    "that one beanie CJ always wears"
+  ],
+  "blank": [
+  "Teo's shoulder sleeve",
+  "Dean's preworkout",
+  "Justin's knee caps",
+  "CJ's netflix",
+  "Jack's Drone",
+  "Jack's Nerfguns",
+  "Wills vinyl collection",
+  "Cj's vacuum"
+  ]
+}
+var grammar = tracery.createGrammar(grammarObj)
+function generate(){
+	var t = grammar.flatten("#origin#");
+	$('h1').text(t);
+}
+</script>
+<h1>Text will go here</h1>
+<button onclick="generate()">Generate</button>
